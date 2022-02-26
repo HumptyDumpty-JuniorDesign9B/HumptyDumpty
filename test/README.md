@@ -1,5 +1,6 @@
 # Audio Subsystem
 
+# Getting Started
 Rasberry Pi Zero Setup: 
 By Default the rasberry pi zero 2 does not Audio output pins set up properly so we need to do the following in order to get PWM audio signals from one of the GPIO 12/13. 
 1. Edit `/boot/config.txt` and add the following so that the proper GPIO pins are configured whenever the Pi's OS boots up. Specifically this configues pins 12, 13 to their alternate 0 functionality which is PWM Audio
