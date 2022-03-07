@@ -12,10 +12,10 @@ import threading
 import time
 
 # Global Variables
-IP = "192.168.137.43"       # MODIFIABLE: Change server IP as needed. Should be hardcoded already 
+IP = "127.0.0.1"       # MODIFIABLE: Change server IP as needed. Should be hardcoded already 
 SIZE = 1024
 FORMAT = "utf-8"
-PORT = 3030
+PORT = 1234
 ADDR = (IP, PORT)
 NUM_R = 3
 SERVER_DATA_PATH = r'/home/pi/Documents/upload_files'        # MODIFIABLE: Change server data path as needed.

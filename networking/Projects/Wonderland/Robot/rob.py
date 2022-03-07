@@ -10,9 +10,9 @@ import socket
 import os
 
 # Global Variables
-IP = "192.168.137.43"    # MODIFIABLE: Change server IP as needed. Should be hardcoded already
+IP = "127.0.0.1"    # MODIFIABLE: Change server IP as needed. Should be hardcoded already
 SERVER_DATA_PATH = r'/home/pi/Documents/robot_files'    # MODIFIABLE: Change robot data path as needed.
-PORT = 3030
+PORT = 1234
 ADDR = (IP, PORT)
 FORMAT = "utf-8"
 SIZE = 1024

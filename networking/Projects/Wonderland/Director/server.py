@@ -12,12 +12,12 @@ import threading
 import zipfile
 
 # Global Variables
-IP = "192.168.137.43"       # MODIFIABLE: Change server IP as needed. Should be hardcoded already
+IP = "127.0.0.1"       # MODIFIABLE: Change server IP as needed. Should be hardcoded already
 PORT = 4456
 ADDR = (IP, PORT)
 SIZE = 1000000
 FORMAT = "utf-8"
-SERVER_DATA_PATH = r"/home/pi/Documents/upload_files"        # MODIFIABLE: Change server data path as needed.
+SERVER_DATA_PATH = r"C:\\Users\\natha\\OneDrive\\Documents\\GitHub\\HumptyDumpty\\networking\\Projects\\Wonderland\\UploadFiles"        # MODIFIABLE: Change server data path as needed.
 
 ## Function that handles new Team Computer Connections
  # Commands available for each Client Computer:
@@ -67,7 +67,7 @@ def handle_client(conn, addr):
                 if ".zip" in name:
                     with zipfile.ZipFile(filepath,"r") as zip_ref:
                         zip_ref.extractall(SERVER_DATA_PATH)
-                    os.system(f"rm {SERVER_DATA_PATH}/{filename}")          # MODIFIABLE: ONLY either of these options: ---os.system(f"rm {SERVER_DATA_PATH}/{filename}")--- on linux             ---os.system(f"del /f {SERVER_DATA_PATH}\{filename}")--- on windows
+                    os.system(f"del /f {SERVER_DATA_PATH}\{filename}")          # MODIFIABLE: ONLY either of these options: ---os.system(f"rm {SERVER_DATA_PATH}/{filename}")--- on linux             ---os.system(f"del /f {SERVER_DATA_PATH}\{filename}")--- on windows
             
 
             send_data = "OK@File uploaded successfully."
@@ -82,7 +82,7 @@ def handle_client(conn, addr):
                 send_data += "The server directory is empty"
             else:
                 if filename in files:
-                    os.system(f"rm {SERVER_DATA_PATH}/{filename}")          # MODIFIABLE: ONLY either of these options: ---os.system(f"rm {SERVER_DATA_PATH}/{filename}")--- on linux             ---os.system(f"del /f {SERVER_DATA_PATH}\{filename}")--- on windows
+                    os.system(f"del /f {SERVER_DATA_PATH}\{filename}")          # MODIFIABLE: ONLY either of these options: ---os.system(f"rm {SERVER_DATA_PATH}/{filename}")--- on linux             ---os.system(f"del /f {SERVER_DATA_PATH}\{filename}")--- on windows
                     send_data += "File deleted successfully."
                 else:
                     send_data += "File not found."

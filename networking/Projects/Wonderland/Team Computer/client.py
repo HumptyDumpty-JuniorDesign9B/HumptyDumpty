@@ -11,8 +11,8 @@ import sys
 import os
 
 # Global Variables 
-IP = "192.168.137.43"       # MODIFIABLE: Change server IP as needed. Should be hardcoded already 
-PORT = 4456
+IP = "127.0.0.1"       # MODIFIABLE: Change server IP as needed. Should be hardcoded already 
+PORT = 1234
 ADDR = (IP, PORT)
 FORMAT = "utf-8"
 SIZE = 1000000
@@ -69,7 +69,7 @@ def main():
                     with open(f"{path}", "rb") as f:
                         filesize = os.path.getsize(path)
                         text = f.read(filesize)
-                        filename = path.split("/")[-1]                 # MODIFIABLE: ONLY either of these options: ---filename = path.split("/")[-1]--- on linux          ---filename = path.split("\\")[-1]--- on Windows 
+                        filename = path.split("\\")[-1]                 # MODIFIABLE: ONLY either of these options: ---filename = path.split("/")[-1]--- on linux          ---filename = path.split("\\")[-1]--- on Windows 
                         send_data = f"{cmd}@{filename}@{filesize}"
                         client.sendall(send_data.encode(FORMAT))
                         client.sendall(text)
