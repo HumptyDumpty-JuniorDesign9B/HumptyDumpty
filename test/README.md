@@ -14,6 +14,7 @@ By Default the rasberry pi zero 2 does not Audio output pins set up properly so 
 3. If everything was setup correctly, then you should see the following
    ```bash
    raspi-config gpio get 
+   raspi-gpio get
    
    Output: 
    GPIO 12: level=0 fsel=4 alt=0 func=PWM0
