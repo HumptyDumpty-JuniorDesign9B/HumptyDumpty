@@ -13,7 +13,6 @@ By Default the rasberry pi zero 2 does not Audio output pins set up properly so 
    ```
 3. If everything was setup correctly, then you should see the following
    ```bash
-   raspi-config gpio get 
    raspi-gpio get
    
    Output: 
@@ -21,8 +20,10 @@ By Default the rasberry pi zero 2 does not Audio output pins set up properly so 
    GPIO 13: level=1 fsel=4 alt=0 func=PWM1
    ```
 4. Now you can connect either `pin12/13` to an audio amplifer which should be hooked up to a speaker
-5. Run the following and you'll hear sounds
+5. Make sure there is a wave file in the currentl directory. Run the following and you'll hear sounds. The default OS comes with sample ones but you can download some same ones into the current directory. 
    ```bash
-   aplay Front_Left.wav
+   wget http://www.pacdv.com/sounds/people_sound_effects/applause-1.wav
+   aplay applause-1.wav
    ```
+6. See guide [here](https://www.bareconductive.com/blogs/resources/how-to-change-the-volume-on-the-pi-cap#:~:text=Use%20alsamixer&text=This%20will%20bring%20up%20an,you%20are%20done%2C%20press%20ESC) for adjusting volume or follow the datasheet of the class D Amp from Sparkfun [here](https://www.sparkfun.com/tutorials/392) for adjusting the volume of the amplifier output with a potentiometer. 
    
